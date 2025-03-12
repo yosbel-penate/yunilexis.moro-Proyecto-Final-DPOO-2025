@@ -96,7 +96,8 @@ Nota: Algunas carpetas pueden ser añadidas o reorganizadas a medida que avanza 
 Conclusiones:
 Este documento tiene como objetivo brindar una visión general del proyecto a desarrollar de la forma más simplificada posible. 
 
-Requisitos del sistema 
+Requisitos del sistema :
+
 Requisitos mínimos :
 -Sistema Operativo: Windows 7/8/10 (32-bit)
 
