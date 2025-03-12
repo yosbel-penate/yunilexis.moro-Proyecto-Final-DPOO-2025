@@ -95,3 +95,25 @@ Nota: Algunas carpetas pueden ser añadidas o reorganizadas a medida que avanza 
 
 Conclusiones:
 Este documento tiene como objetivo brindar una visión general del proyecto a desarrollar de la forma más simplificada posible. 
+
+Requisitos del sistema 
+Requisitos mínimos :
+-Sistema Operativo: Windows 7/8/10 (32-bit)
+
+-Procesador: Intel Core i3 o equivalente
+
+-Memoria RAM: 2 GB mínimo 
+
+-Gráficos: Tarjeta gráfica compatible con DirectX 11 con 1 GB de VRAM
+
+-DirectX: Versión 11
+
+
+-Almacenamiento: 500 MB de espacio disponible 
+
+-Sonido: Tarjeta de sonido compatible con DirectX
+ 
+Requisitos recomendados:
+Memoria RAM:4GB
+
+Almacenamiento: 1GB de espacio disponible
