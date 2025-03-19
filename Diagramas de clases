@@ -44,17 +44,21 @@ class Jugador {
     + agregarPersonaje(personaje : PersonajeJugable) : void
 }
 
-
 abstract class PersonajeJugable {
     - nombre : String
     - vida : int
+    - ataqueBase : int
+    - armaduraBase : int
     - faccion : Faccion
     - habilidades : ArrayList<Habilidad>
-    - inventario : ArrayList<Item> ' Relación con los ítems
-    + PersonajeJugable(nombre : String, vida : int, faccion : Faccion)
+    - inventario : ArrayList<Item>
+    + PersonajeJugable(nombre : String, vida : int, ataqueBase : int, armaduraBase : int, faccion : Faccion)
     + agregarItem(item : Item) : void
     + listarItems() : void
     + usarHabilidad(nombreHabilidad : String) : void
+    + calcularAtaque() : int
+    + calcularArmadura() : int
+
 }
 
 
