@@ -1,0 +1,121 @@
+@startuml
+class Juego {
+    - jugadores : ArrayList<Jugador>
+    - mapa : Mapa
+    + Juego(jugadores : List<Jugador>, mapa : Mapa)
+    + iniciar() : void
+    + interactuarConNPC(nombreNPC : String) : void
+    + combatirEnemigo(nombreEnemigo : String) : void
+    + finalizar() : void
+}
+
+
+class Mapa {
+    - nombre : String
+    - descripcion : String
+    - escenarios : ArrayList<Escenario>
+    + Mapa(nombre : String, descripcion : String)
+    + agregarEscenario(escenario : Escenario) : void
+    + cargarEscenario(nombreEscenario : String) : Escenario
+    + getEscenarios() : ArrayList<Escenario>
+}
+
+
+class Escenario {
+    - nombre : String
+    - descripcion : String
+    - npcs : ArrayList<NPC>
+    - enemigos : ArrayList<Enemigo>
+    + Escenario(nombre : String, descripcion : String)
+    + agregarNPC(npc : NPC) : void
+    + agregarEnemigo(enemigo : Enemigo) : void
+    + getNpcs() : ArrayList<NPC>
+    + getEnemigos() : ArrayList<Enemigo>
+}
+
+
+class Jugador {
+    - nombre : String
+    - energiaTemporal : int
+    - personajesActivos : ArrayList<PersonajeJugable>
+    + Jugador(nombre : String, energiaTemporal : int)
+    + seleccionarPersonaje(personaje : PersonajeJugable) : void
+    + usarEnergia(cantidad : int) : void
+    + agregarPersonaje(personaje : PersonajeJugable) : void
+}
+
+
+abstract class PersonajeJugable {
+    - nombre : String
+    - vida : int
+    - faccion : Faccion
+    - habilidades : ArrayList<Habilidad>
+    - inventario : ArrayList<Item> ' Relación con los ítems
+    + PersonajeJugable(nombre : String, vida : int, faccion : Faccion)
+    + agregarItem(item : Item) : void
+    + listarItems() : void
+    + usarHabilidad(nombreHabilidad : String) : void
+}
+
+
+class Faccion {
+    - nombre : String
+    + Faccion(nombre : String)
+    + getNombre() : String
+}
+
+
+class NPC {
+    - nombre : String
+    - rol : String
+    - faccion : Faccion
+    + NPC(nombre : String, rol : String, faccion : Faccion)
+    + getNombre() : String
+    + getRol() : String
+    + hablar() : void
+}
+
+
+class Enemigo {
+    - nombre : String
+    - vida : int
+    - dano : int
+    + Enemigo(nombre : String, vida : int, dano : int)
+    + getNombre() : String
+    + getVida() : int
+    + recibirDano(cantidad : int) : void
+    + atacar(personaje : PersonajeJugable) : void
+}
+
+
+class Habilidad {
+    - nombre : String
+    - descripcion : String
+    + Habilidad(nombre : String, descripcion : String)
+    + getNombre() : String
+    + getDescripcion() : String
+    + usar() : void
+}
+
+class Item {
+    - nombre : String
+    - descripcion : String
+    - tipo : String ' Ej.: arma, consumible, armadura, etc.
+    + Item(nombre : String, descripcion : String, tipo : String)
+    + getNombre() : String
+    + getDescripcion() : String
+    + getTipo() : String
+}
+
+
+
+Juego --> Jugador : tiene
+Juego --> Mapa : usa
+Mapa *-- Escenario : contiene *
+Jugador --> PersonajeJugable : controla
+PersonajeJugable --> Faccion : pertenece a
+PersonajeJugable *-- Item : posee *
+Escenario --> NPC : contiene
+Escenario --> Enemigo : contiene
+Enemigo --> PersonajeJugable : ataca
+@enduml
