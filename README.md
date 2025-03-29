@@ -25,7 +25,8 @@ Herramientas:
 
 -Lenguaje: Java
 
--IDE: Netbeans
+-IDE: .Intelli J IDEA
+      .Netbeans
 
 -Asesoría de la IA
 
