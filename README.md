@@ -34,6 +34,12 @@ Herramientas:
 
 -BandLab
 
+-PlantUML 
+
+-Scene Builder 
+
+-Tiled:para la edicion de mapas
+
 Nota: Puede que se utilice otras herramientas a medida que avanza el proyecto. 
 
 
