@@ -27,7 +27,9 @@ class NPC {
     + hablar() : void
     + interactuar() : void
 }
-
+class Aventurero extender NPC {
++ nombre = "Aventurero "
+}
 class Jugador {
     - nombre : String
     - energiaTemporal : int
