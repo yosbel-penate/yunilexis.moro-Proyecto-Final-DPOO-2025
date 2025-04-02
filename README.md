@@ -8,6 +8,8 @@ Géneros: Acción, RPG, Estrategia, Cooperativo, Multijugador (4 jugadores).
 Descripción:
 En ChronoConflux, los jugadores se convierten en hábiles viajeros del tiempo que tienen como objetivo detener a Oblivion Core, una poderosa entidad cósmica y el villano de esta historia, que busca desestabilizar la línea temporal mediante la destrucción de realidades.
 
+
+
 El juego dispone de 24 personajes jugables agrupados en facciones pertenecientes a distintos períodos de la historia; cada uno de ellos cuenta con un ataque básico, una habilidad activa y una pasiva, una o dos categorías (soporte, asesino, control, etc) y estadísticas base que pueden mejorar mientras se juega.
 
 Papel de cada integrante en el desarrollo del juego:
