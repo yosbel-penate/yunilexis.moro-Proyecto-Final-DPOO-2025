@@ -114,6 +114,7 @@ class Nyx extends PersonajeJugable {
     + clones() : void
 }
 
+
 ' Facción Medieval (5)
 class SirGareth extends PersonajeJugable {
     + faccion = "Medieval"
