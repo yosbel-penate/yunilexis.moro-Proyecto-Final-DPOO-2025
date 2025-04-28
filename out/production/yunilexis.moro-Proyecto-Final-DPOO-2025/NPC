@@ -1,0 +1,57 @@
+class NPC:
+    def __init__(self, nombre, titulo, rol, dialogos, estado="calmo"):
+        self.nombre = nombre
+        self.titulo = titulo
+        self.rol = rol  # Ejemplo: 'consejero temporal'
+        self.dialogos = dialogos  # Diccionario con respuestas según el estado
+        self.estado = estado
+
+    def interactuar(self, contexto_evento):
+        # Modifica el estado según el contexto del juego (por ejemplo, eventos críticos)
+        if contexto_evento == "desorden_temporal":
+            self.estado = "alerta"
+        mensaje = self.dialogos.get(self.estado, self.dialogos["calmo"])
+        print(f"{self.nombre} ({self.titulo}) dice: '{mensaje}'")
+
+# Creación de Aetherios, el Guardián de la Continuidad
+aetherios = NPC(
+    nombre="Aetherios",
+    titulo="El Guardián de la Continuidad",
+    rol="consejero temporal",
+    dialogos={
+        "calmo": "El tiempo fluye de forma inquebrantable, pero incluso sus ríos pueden torcerse. Escucha bien y actúa con sabiduría.",
+        "alerta": "¡Cuidado! Las fracturas amenazan con desbordar el orden temporal. Debemos actuar antes de que Oblivion Core devore toda esperanza."
+    }
+)
+
+# Ejemplo de interacción en un contexto de evento crítico
+aetherios.interactuar("desorden_temporal")
+
+class NPC:
+    def __init__(self, nombre, titulo, rol, dialogos, estado="sereno"):
+        self.nombre = nombre
+        self.titulo = titulo
+        self.rol = rol  # Ejemplo: 'oráculo temporal'
+        self.dialogos = dialogos  # Respuestas según el estado del juego
+        self.estado = estado
+
+    def interactuar(self, contexto_evento):
+        # Ajusta el estado del NPC según el contexto (por ejemplo, crisis temporal)
+        if contexto_evento == "frontera_temporal":
+            self.estado = "inquieto"
+        mensaje = self.dialogos.get(self.estado, self.dialogos["sereno"])
+        print(f"{self.nombre} ({self.titulo}) dice: '{mensaje}'")
+
+# Creación de Chronomante, el Oráculo de los Pliegues
+chronomante = NPC(
+    nombre="Chronomante",
+    titulo="El Oráculo de los Pliegues",
+    rol="oráculo temporal",
+    dialogos={
+        "sereno": "El tiempo es un lienzo en perpetuo cambio; cada decisión traza un nuevo destino.",
+        "inquieto": "¡Atención! Las fracturas amenazan con rasgar el velo de la realidad. El futuro pende de un hilo."
+    }
+)
+
+# Ejemplo de interacción en un contexto crítico
+chronomante.interactuar("frontera_temporal")
