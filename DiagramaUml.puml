@@ -1,0 +1,272 @@
+@startuml
+' Clases principales
+class Juego {
+    - jugadores : ArrayList<Jugador>
+    - mapa : Mapa
+    + iniciar() : void
+    + combatirEnemigo(nombreEnemigo : String) : void
+    + finalizar() : void
+}
+
+class Mapa {
+    - nombre : String
+    - descripcion : String
+    - escenarios : ArrayList<Escenario>
+    + agregarEscenario(escenario : Escenario) : void
+}
+
+class Escenario {
+    - nombre : String
+    - descripcion : String
+    - npcs : ArrayList<NPC>
+    - enemigos : ArrayList<Enemigo>
+    + agregarNPC(npc : NPC) : void
+}
+
+class NPC {
+    - nombre : String
+    + hablar() : void
+    + interactuar() : void
+}
+
+class Jugador {
+    - nombre : String
+    - energiaTemporal : int
+    - personajesActivos : ArrayList<PersonajeJugable>
+    - maxReclutas : int
+    - inventario : ArrayList<Item>
+    + usarItem(item : Item) : void
+    + seleccionarPersonaje(personaje : PersonajeJugable) : void
+}
+
+abstract class PersonajeJugable {
+    - nombre : String
+    - vida : int
+    - ataqueBase : int
+    - defensa : int
+    - mejorasAplicadas : int
+    - inventario : ArrayList<Item>
+    + faccion : String
+    + categorias : List<String>
+    + usarItem(item : Item) : void
+    + atacar() : void
+    + defender() : void
+}
+
+' Sistema de Ítems
+abstract class Item {
+    - nombre : String
+    - tipo : String
+    + usar() : void
+}
+
+class PocionVida extends Item {
+    + curacion : int
+    + usar() : void
+}
+
+class CristalPoder extends Item {
+    + mejoraAtaque : int
+    + mejoraDefensa : int
+    + usos : int
+    + maxUsos : int
+    + usar() : void
+}
+
+class PocionEnergiaTemporal extends Item {
+    + incrementoReclutas : int
+    + usar() : void
+}
+
+' Facción Antigua
+class Aria extends PersonajeJugable {
+    + empujarVentisca() : void
+    + escudoHielo() : void
+}
+
+class Kaelthar extends PersonajeJugable {
+    + estocadaFuego() : void
+    + tornado() : void
+}
+
+class ZulGara extends PersonajeJugable {
+    + zarpazo() : void
+    + rugido() : void
+}
+
+class Nyx extends PersonajeJugable {
+    + ataqueArania() : void
+    + clones() : void
+}
+
+' Facción Medieval
+class SirGareth extends PersonajeJugable {
+    + golpeMayal() : void
+    + reflejarProyectiles() : void
+}
+
+class Vespera extends PersonajeJugable {
+    + pocionExplosiva() : void
+    + charcoElemental() : void
+}
+
+class Rook extends PersonajeJugable {
+    + hachaBoomerang() : void
+    + murcielagos() : void
+}
+
+class Lyra extends PersonajeJugable {
+    + melodia() : void
+    + notasMusicales() : void
+}
+
+class Ignis extends PersonajeJugable {
+    + llamarada() : void
+    + alientoFuego() : void
+}
+
+' Facción Futurista
+class Neon7 extends PersonajeJugable {
+    + misiles() : void
+    + escudo() : void
+}
+
+class DraVectra extends PersonajeJugable {
+    + latigoLaser() : void
+    + portal() : void
+}
+
+class Z3r0 extends PersonajeJugable {
+    + proyectilHolografico() : void
+    + silenciar() : void
+}
+
+class TitanX extends PersonajeJugable {
+    + puñetazo() : void
+    + sismo() : void
+}
+
+class Luna9 extends PersonajeJugable {
+    + cuchillada() : void
+    + invisibilidad() : void
+}
+
+class Orion extends PersonajeJugable {
+    + rayoLaser() : void
+    + invocarMecha() : void
+}
+
+' Facción Apocalíptica
+class Scar extends PersonajeJugable {
+    + escombros() : void
+    + invocarEsbirros() : void
+}
+
+class Viper extends PersonajeJugable {
+    + balaVeneno() : void
+    + disparoCertero() : void
+}
+
+class Marrow extends PersonajeJugable {
+    + vomitoAcido() : void
+    + explosion() : void
+}
+
+class Jinx extends PersonajeJugable {
+    + drenarVida() : void
+    + robarRecursos() : void
+}
+
+' Facción Mística
+class Elysia extends PersonajeJugable {
+    + detenerTiempo() : void
+    + manipularTiempo() : void
+}
+
+class Thalos extends PersonajeJugable {
+    + golpeMartillo() : void
+    + meteorito() : void
+}
+
+class Seraphine extends PersonajeJugable {
+    + curar() : void
+    + resucitar() : void
+}
+
+class Void extends PersonajeJugable {
+    + orbeOscuro() : void
+    + brecha() : void
+}
+
+class Kairo extends PersonajeJugable {
+    + orbeLuminoso() : void
+    + revelar() : void
+}
+
+' Enemigos
+class Enemigo {
+    - nombre : String
+    - categoria : String
+    - apariencia : String
+    - estrategia : String
+    - vida : int
+    - ataqueBase : int
+    - defensa : int
+    + ataqueBasico() : void
+    + habilidadEspecial() : void
+}
+
+class CriaturaSombra extends Enemigo {
+    + zarpazoSombra() : void
+    + aparecerCasilla() : void
+}
+
+class Enguñebobos extends Enemigo {
+    + mordiscoConstante() : void
+}
+
+class Golem extends Enemigo {
+    + puñetazoPiedra() : void
+}
+
+' Jefes de Facción
+class Plantera extends Enemigo {
+    + raicesVenenosas() : void
+}
+
+class ExcaliburPoseida extends Enemigo {
+    + corteVeloz() : void
+}
+
+class DemonioGregorio extends Enemigo {
+    + bolaFuego() : void
+    + invocarGéiser() : void
+}
+
+class CucarachonHolografico extends Enemigo {
+    + rayoLaser() : void
+    + resistenciaHolografica() : void
+}
+
+class BrujaNocturna extends Enemigo {
+    + hechizoParalizante() : void
+    + silenciarHabilidades() : void
+}
+
+' Jefe Final
+class OblivionCore extends Enemigo {
+    + lluviaEspadas() : void
+    + golpeAsesino() : void
+}
+
+' Relaciones
+Juego --> Jugador : tiene
+Juego --> Mapa : usa
+Mapa *-- Escenario : contiene
+Jugador --> PersonajeJugable : controla
+Escenario --> NPC : contiene
+Escenario --> Enemigo : contiene
+PersonajeJugable *-- Item : posee
+Jugador *-- Item : almacena
+Enemigo --> Item : puede soltar
+@enduml
