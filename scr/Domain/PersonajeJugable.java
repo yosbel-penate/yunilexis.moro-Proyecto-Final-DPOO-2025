@@ -15,7 +15,7 @@ public abstract class PersonajeJugable {
     protected List<String> categorias;
     protected ArrayList<Item> inventario;
     public PersonajeJugable(String nombre, int vida, int ataqueBase, int armaduraBase,
-                            String faccion, List<String> categorias) {
+                            String faccion) {
         this.nombre = nombre;
         this.vida = vida;
         this.ataqueBase = ataqueBase;
