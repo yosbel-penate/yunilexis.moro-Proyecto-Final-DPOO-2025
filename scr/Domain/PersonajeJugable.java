@@ -9,25 +9,24 @@ public abstract class PersonajeJugable {
     protected String nombre;
     protected int vida;
     protected int ataqueBase;
-    protected int armaduraBase;
+    protected int Defensa;
     protected int mejorasAplicadas = 0;
     protected String faccion;
     protected List<String> categorias;
     protected ArrayList<Item> inventario;
-    public PersonajeJugable(String nombre, int vida, int ataqueBase, int armaduraBase,
+    public PersonajeJugable(String nombre, int vida, int ataqueBase, int Defensa,
                             String faccion) {
         this.nombre = nombre;
         this.vida = vida;
         this.ataqueBase = ataqueBase;
-        this.armaduraBase = armaduraBase;
+        this.Defensa = Defensa;
         this.faccion = faccion;
-        this.categorias = categorias;
         this.inventario = new ArrayList<>();
     }
     public void aplicarMejora(CristalPoder cristal) {
         if (cristal.getUsos() < cristal.getMaxUsos()) {
             ataqueBase += cristal.getMejoraAtaque();
-            armaduraBase += cristal.getMejoraDefensa();
+            Defensa += cristal.getMejoraDefensa();
             mejorasAplicadas++;
             cristal.incrementarUsos();
         }
@@ -55,16 +54,11 @@ public abstract class PersonajeJugable {
     public void setAtaqueBase(int ataqueBase) {
         this.ataqueBase = ataqueBase;
     }
-    public int getArmaduraBase() {
-        return armaduraBase;
+    public int getDefensa() {
+        return Defensa;
     }
-    public void setArmaduraBase(int armaduraBase) {
-        this.armaduraBase = armaduraBase;
+    public void setDefensa(int defensa) {
+        this.Defensa = defensa;
     }
-    public String getFaccion() {
-        return faccion;
-    }
-    public List<String> getCategorias() {
-        return categorias;
-    }
+
 }

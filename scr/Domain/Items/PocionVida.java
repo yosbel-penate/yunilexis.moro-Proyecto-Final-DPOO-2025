@@ -5,13 +5,13 @@ import scr.Domain.Jugador;
 import scr.Domain.PersonajeJugable;
 
 public class PocionVida extends Item {
-    private int curacion = 30;
     public PocionVida() {
         super("Poción de Vida", "Consumible");
     }
     @Override
     public void usar(Object objetivo) {
         if (objetivo instanceof PersonajeJugable pj) {
+            int curacion = 30;
             int nuevaVida = pj.getVida() + curacion;
             pj.setVida(nuevaVida);
             System.out.println(pj.getNombre() + " ha recuperado " + curacion + "puntos de vida");

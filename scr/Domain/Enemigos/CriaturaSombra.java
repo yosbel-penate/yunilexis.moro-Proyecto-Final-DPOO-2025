@@ -4,12 +4,20 @@ import scr.Domain.Enemigo;
 
 public class CriaturaSombra extends Enemigo {
     public CriaturaSombra() {
-        super("Criatura de sombra", "Combate cercano", "Sombra oscura con garras", "Ataca por sorpresa");
+        super(
+                "Criatura de sombra",         // nombre
+                "Combate cercano",            // categoria
+                "Sombra oscura con garras",  // apariencia
+                "Ataca por sorpresa",         // estrategia
+                120,                         // vida
+                35,                          // ataqueBase
+                20                           // defensa
+        );
     }
 
     @Override
     public void ataqueBasico() {
-        System.out.println(nombre + " lanza un zarpazo de sombra.");
+        System.out.println(nombre + " lanza un zarpazo de sombra con fuerza " + ataqueBase + ".");
     }
 
     public void zarpazoSombra() {
@@ -17,6 +25,6 @@ public class CriaturaSombra extends Enemigo {
     }
 
     public void aparecerCasilla() {
-        System.out.println(nombre + " aparece de la sombra.");
+        System.out.println(nombre + " aparece de la sombra sigilosamente.");
     }
 }

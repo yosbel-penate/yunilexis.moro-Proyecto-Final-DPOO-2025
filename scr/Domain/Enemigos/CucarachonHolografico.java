@@ -4,12 +4,20 @@ import scr.Domain.Enemigo;
 
 public class CucarachonHolografico extends Enemigo {
     public CucarachonHolografico() {
-        super("Cucarachón holográfico", "Jefe de facción", "Insecto digital", "Rayo láser, resistencia holográfica");
+        super(
+                "Cucarachón holográfico",  // nombre
+                "Jefe de facción",         // categoría
+                "Insecto digital",         // apariencia
+                "Rayo láser, resistencia holográfica", // estrategia
+                200,                       // vida
+                75,                        // ataqueBase
+                50                         // defensa
+        );
     }
 
     @Override
     public void ataqueBasico() {
-        System.out.println(nombre + " dispara proyectiles holográficos.");
+        System.out.println(nombre + " dispara proyectiles holográficos con potencia " + ataqueBase + ".");
     }
 
     public void rayoLaser() {

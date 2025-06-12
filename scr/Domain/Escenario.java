@@ -3,10 +3,10 @@ package scr.Domain;
 import java.util.ArrayList;
 
 class Escenario {
-    private String nombre;
-    private String descripcion;
-    private ArrayList<NPC> npcs = new ArrayList<>();
-    private ArrayList<Enemigo> enemigos;
+    private final String nombre;
+    private final String descripcion;
+    private final ArrayList<NPC> npcs = new ArrayList<>();
+    private final ArrayList<Enemigo> enemigos;
     public Escenario(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;

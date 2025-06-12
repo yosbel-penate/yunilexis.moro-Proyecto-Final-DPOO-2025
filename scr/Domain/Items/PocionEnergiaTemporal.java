@@ -4,7 +4,6 @@ import scr.Domain.Item;
 import scr.Domain.Jugador;
 
 class PocionEnergiaTemporal extends Item {
-    private int incrementoReclutas = 1;
 
     public PocionEnergiaTemporal() {
         super("Poción de Energía Temporal", "Especial");
@@ -14,6 +13,7 @@ class PocionEnergiaTemporal extends Item {
     public void usar(Object objetivo) {
         if (objetivo instanceof Jugador jugador) {
             int energiaActual = jugador.getEnergiaTemporal();
+            int incrementoReclutas = 1;
             jugador.setEnergiaTemporal(energiaActual + incrementoReclutas);
             System.out.println(jugador.getNombre() + " ha incrementado su energía temporal en " + incrementoReclutas);
         } else {

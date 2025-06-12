@@ -4,15 +4,23 @@ import scr.Domain.Enemigo;
 
 public class Golem extends Enemigo {
     public Golem() {
-        super("Gólem", "Robusto/Combate cercano", "Gigante de piedra", "Ataques lentos pero potentes");
+        super(
+                "Gólem",                   // nombre
+                "Robusto/Combate cercano", // categoría
+                "Gigante de piedra",       // apariencia
+                "Ataques lentos pero potentes", // estrategia
+                350,                      // vida
+                80,                       // ataqueBase
+                70                        // defensa
+        );
     }
 
     @Override
     public void ataqueBasico() {
-        System.out.println(nombre + " golpea con su puño de piedra.");
+        System.out.println(nombre + " golpea con su puño de piedra con fuerza " + ataqueBase + ".");
     }
 
-    public void puñetazoPiedra() {
+    public void punetazoPiedra() {
         System.out.println(nombre + " embiste con un puñetazo de piedra.");
     }
 }

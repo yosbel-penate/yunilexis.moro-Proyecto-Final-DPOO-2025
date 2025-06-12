@@ -4,10 +4,10 @@ import scr.Domain.Item;
 import scr.Domain.PersonajeJugable;
 
 public class CristalPoder extends Item {
-    private int mejoraAtaque = 5;
-    private int mejoraDefensa = 3;
+    private final int mejoraAtaque = 5;
+    private final int mejoraDefensa = 3;
     private int usos = 0;
-    private int maxUsos = 3;
+    private final int maxUsos = 3;
     public CristalPoder() {
         super("Cristal de Poder", "Mejora");
     }
@@ -16,7 +16,7 @@ public class CristalPoder extends Item {
         if (objetivo instanceof PersonajeJugable pj) {
             if (usos < maxUsos) {
                 pj.setAtaqueBase(pj.getAtaqueBase() + mejoraAtaque);
-                pj.setArmaduraBase(pj.getArmaduraBase() + mejoraDefensa);
+                pj.setDefensa(pj.getDefensa() + mejoraDefensa);
                 usos++;
                 System.out.println(pj.getNombre() + " ha mejorado ataque y defensa con un Cristal de Poder.");
             } else {

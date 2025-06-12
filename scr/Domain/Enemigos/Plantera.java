@@ -4,12 +4,20 @@ import scr.Domain.Enemigo;
 
 public class Plantera extends Enemigo {
     public Plantera() {
-        super("Plantera", "Jefe de facción", "Planta gigante y venenosa", "Raíces venenosas");
+        super(
+                "Plantera",                  // nombre
+                "Jefe de facción",           // categoría
+                "Planta gigante y venenosa",// apariencia
+                "Raíces venenosas",          // estrategia
+                280,                        // vida
+                80,                         // ataqueBase
+                55                          // defensa
+        );
     }
 
     @Override
     public void ataqueBasico() {
-        System.out.println(nombre + " azota con enredaderas.");
+        System.out.println(nombre + " azota con enredaderas con fuerza " + ataqueBase + ".");
     }
 
     public void raicesVenenosas() {
